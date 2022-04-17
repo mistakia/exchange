@@ -6,6 +6,13 @@ import Box from '@mui/material/Box'
 
 import Dialog from '@components/dialog'
 import HomePage from '@pages/home'
+import BalancesPage from '@pages/balances'
+import TransferPage from '@pages/transfer'
+import TradePage from '@pages/trade'
+import SettingsPage from '@pages/settings'
+import OrdersPage from '@pages/orders'
+import SignupPage from '@pages/signup'
+import SigninPage from '@pages/signin'
 
 import '@styles/normalize.css'
 import '@styles/typography.styl'
@@ -33,6 +40,15 @@ export default class App extends React.Component {
       <>
         <Routes>
           <Route path='/' element={<HomePage />} />
+          <Route path='/signup' element={<SignupPage />} />
+          <Route path='/signin' element={<SigninPage />} />
+          <Route path='/settings' element={<SettingsPage />} />
+          <Route path='/balances' element={<BalancesPage />} />
+          {/* could be called wallet page */}
+          <Route path='/transfer' element={<TransferPage />} />
+          <Route path='/trade' element={<TradePage />} />
+          {/* sub pages: swap & advanced */}
+          <Route path='/orders' element={<OrdersPage />} />
         </Routes>
         <Dialog />
       </>

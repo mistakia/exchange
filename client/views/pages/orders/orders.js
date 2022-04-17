@@ -3,20 +3,20 @@ import PropTypes from 'prop-types'
 // import Grid from '@mui/material/Grid'
 import Container from '@mui/material/Container'
 
-import './home.styl'
+// import './orders.styl'
 
-export default class HomePage extends React.Component {
+export default class OrdersPage extends React.Component {
   render() {
     const { isLoaded } = this.props
     return (
       <Container maxWidth='md' className='home__container'>
         <p>App Loaded: {isLoaded.toString()}</p>
-        <p>Page: Home</p>
+        <p>Page: Orders</p>
       </Container>
     )
   }
 }
 
-HomePage.propTypes = {
+OrdersPage.propTypes = {
   isLoaded: PropTypes.bool
 }
