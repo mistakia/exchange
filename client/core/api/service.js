@@ -5,19 +5,28 @@ import merge from 'merge-options'
 
 import { API_URL } from '@core/constants'
 
-/* const POST = (data) => ({
- *   method: 'POST',
- *   body: JSON.stringify(data),
- *   headers: {
- *     'Content-Type': 'application/json'
- *   }
- * })
- *  */
+const POST = (data) => ({
+  method: 'POST',
+  body: JSON.stringify(data),
+  headers: {
+    'Content-Type': 'application/json'
+  }
+})
 
 export const api = {
   getUser({ user_id }) {
     const url = `${API_URL}/users/${user_id}`
     return { url }
+  },
+
+  postSignin(data) {
+    const url = `${BASE_URL}/signin`
+    return { url, ...POST(data) }
+  },
+
+  postSignup(data) {
+    const url = `${BASE_URL}/signup`
+    return { url, ...POST(data) }
   }
 }
 

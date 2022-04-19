@@ -3,8 +3,7 @@ import { Record } from 'immutable'
 import { appActions } from './actions'
 
 const initialState = new Record({
-  isLoaded: false,
-  publicKey: null
+  isLoaded: false
 })
 
 export function appReducer(state = initialState(), { payload, type }) {

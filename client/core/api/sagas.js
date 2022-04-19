@@ -2,7 +2,10 @@ import { call, put, cancelled } from 'redux-saga/effects'
 // import { LOCATION_CHANGE } from 'redux-first-history'
 
 import { api, apiRequest } from '@core/api/service'
-import { getUserRequestActions } from '@core/app/actions'
+import {
+  postSigninRequestActions,
+  postSignupRequestActions
+} from '@core/auth/actions'
 
 function* fetchAPI(apiFunction, actions, opts = {}) {
   const { abort, request } = apiRequest(apiFunction, opts)
@@ -31,4 +34,13 @@ function* fetch(...args) {
   // yield race([call(fetchAPI.bind(null, ...args)), take(LOCATION_CHANGE)])
 }
 
-export const getUser = fetch.bind(null, api.getUser, getUserRequestActions)
+export const postSignin = fetch.bind(
+  null,
+  api.postSignin,
+  postSigninRequestActions
+)
+export const postSignup = fetch.bind(
+  null,
+  api.postSignup,
+  postSignupRequestActions
+)
