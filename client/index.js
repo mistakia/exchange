@@ -2,11 +2,12 @@
 import '@babel/polyfill'
 
 import React from 'react'
-import { render } from 'react-dom'
+import { createRoot } from 'react-dom/client'
 
 import Root from '@views/root.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   const rootElement = document.getElementById('app')
-  render(<Root />, rootElement)
+  const root = createRoot(rootElement)
+  root.render(<Root />)
 })
