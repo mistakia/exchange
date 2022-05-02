@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import LinearProgress from '@mui/material/LinearProgress'
 import Box from '@mui/material/Box'
 
+import Menu from '@components/menu'
 import Dialog from '@components/dialog'
 import HomePage from '@pages/home'
 import BalancesPage from '@pages/balances'
@@ -38,6 +39,7 @@ export default class App extends React.Component {
 
     return (
       <>
+        <Menu />
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/signup' element={<SignupPage />} />
